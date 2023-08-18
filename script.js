@@ -63,27 +63,33 @@ function dividir(){
     segundacuenta = true;
 }
 /*Ejecutor de cuentas - Botón de igual*/
-function resultadocuenta(){
+function resultadocuenta() {
     valor2 = display.innerHTML;
-    if (cuenta == 1){
-        resultado = Number(valor1) + Number(valor2)
-        display.innerHTML = resultado
-        segundacuenta = true;
-    } else if (cuenta == 2){
-        resultado = Number(valor1) - Number(valor2)
-        display.innerHTML = resultado
-        segundacuenta = true;
-    } else if (cuenta == 3){
-        resultado = Number(valor1) * Number(valor2)
-        display.innerHTML = resultado
-        segundacuenta = true;
-    } else if (cuenta == 4){
-        resultado = (Number(valor1) / Number(valor2)).toFixed(5)
-        display.innerHTML = resultado
-        segundacuenta = true;
+
+    if (cuenta == 1) {
+        resultado = Number(valor1) + Number(valor2);
+    } else if (cuenta == 2) {
+        resultado = Number(valor1) - Number(valor2);
+    } else if (cuenta == 3) {
+        resultado = Number(valor1) * Number(valor2);
+    } else if (cuenta == 4) {
+        resultado = Number(valor1) / Number(valor2);
     } else {
-        display.innerHTML = "ERR0R"
+        display.innerHTML = valor2;
+        return;
     }
+
+    if (resultado.toString().length > 8) {
+        if (Math.abs(resultado) > 9999999) {
+            display.innerHTML = "Cap. excedida";
+        } else {
+            display.innerHTML = resultado.toFixed(8);
+        }
+    } else {
+        display.innerHTML = resultado;
+    }
+
+    segundacuenta = true;
 }
 /*Event Listeners en los botones para que puedan accionarse*/
 document.addEventListener("DOMContentLoaded",function(e){
