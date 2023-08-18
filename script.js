@@ -1,5 +1,6 @@
 /* Extraemos los botones de la calculadora y las almacenamos en variables*/
-const display = document.getElementById("display")
+const display = document.getElementById("displayer")
+const historial = document.getElementById("historial")
 const reset = document.getElementById("reset")
 const division = document.getElementById("division")
 const multiplicacion = document.getElementById("multiplicacion")
@@ -26,6 +27,7 @@ let segundacuenta = false;
 /*Botón AC - Reset Display*/
 function resetear(){
     display.innerHTML = "0";
+    historial.innerHTML = "Made by: Axel Palombo";
     cuenta = 0;
     valor1 = 0;
     valor2 = 0;
@@ -68,12 +70,16 @@ function resultadocuenta() {
 
     if (cuenta == 1) {
         resultado = Number(valor1) + Number(valor2);
+        historial.innerHTML = valor1 + " + " + valor2;
     } else if (cuenta == 2) {
         resultado = Number(valor1) - Number(valor2);
+        historial.innerHTML = valor1 + " - " + valor2;
     } else if (cuenta == 3) {
         resultado = Number(valor1) * Number(valor2);
+        historial.innerHTML = valor1 + " * " + valor2;
     } else if (cuenta == 4) {
         resultado = Number(valor1) / Number(valor2);
+        historial.innerHTML = valor1 + " / " + valor2;
     } else {
         display.innerHTML = valor2;
         return;
@@ -88,7 +94,6 @@ function resultadocuenta() {
     } else {
         display.innerHTML = resultado;
     }
-
     segundacuenta = true;
 }
 /*Event Listeners en los botones para que puedan accionarse*/

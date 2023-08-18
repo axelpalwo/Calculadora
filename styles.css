@@ -16,8 +16,13 @@
     margin:5px -5px;
     color:white;
     text-align:right;
+}
+#display #displayer{
+    height:60px;
     font-size:3rem;
-    line-height:140px;
+}
+#display #historial{
+    font-size:1.5rem;
 }
 #ac-div-mult, #contenedor-teclado{
     display:flex;
