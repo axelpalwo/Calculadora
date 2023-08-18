@@ -1,0 +1,70 @@
+:root{
+    --color1:rgb(224, 169, 67);
+    --color2:rgb(47, 139, 214);
+    --color3:rgb(223, 46, 90);
+    --color4:rgb(150, 143, 143);
+    font-size:20px;
+}
+.container{
+    width:410px;
+    height:610px;
+    background-color:black;
+}
+#display{
+    width:400px;
+    height:100px;
+    margin:5px -5px;
+    color:white;
+    text-align:right;
+    font-size:3rem;
+    line-height:140px;
+}
+#ac-div-mult, #contenedor-teclado{
+    display:flex;
+    margin-top:0;
+    margin-left:5px;
+    margin-right:5px;
+}
+#teclado{
+    display:flex;
+    flex-wrap:wrap;
+}
+.boton{
+    width:100px;
+    height:100px;
+    
+}
+.boton-doble{
+    width:200px;
+    height:100px;
+}
+.boton-doble-inv{
+    width:100px;
+    height:200px;
+}
+button{
+    width:100%;
+    height:100%;
+    font-size:1.7rem;
+    border:0.5px solid black;
+}
+button:hover{
+    transition:0.3s;
+    scale: 0.975;
+}
+button:active{
+    transition:0.3s;
+    scale:0.950;
+}
+.nar{
+    background-color: var(--color1);
+}
+.azul{
+    background-color: var(--color2);
+}
+.rojo{
+    background-color: var(--color3);
+}
+.gris{
+    background-color: var(--color4);
+}
